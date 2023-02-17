@@ -73,12 +73,12 @@
       <text x={mark.x} y={mark.y} on:click={() => setMonth̐(m)} text-anchor="middle" font-weight={m==curmo ? 600 : 400} fill={m==curmo ? 'brown':'olive'} font-size={m==curmo ? 4 : 3}>{mark.val}</text>
     {/each}
     {#each dayMarks as dm,d}
-      <text x={dm.x} y={dm.y} font-size={d==curday.d ? 4 : 3} font-weight={d==curday.d ? 600 : 400} fill={d==curday.d ? 'purple':'navy'} font-family="Courier New" text-anchor="middle">{d+1}</text>
+      <text x={dm.x} y={dm.y} font-size={d==curday.d ? 4 : 3} font-weight={d==curday.d-1 ? 600 : 400} fill={(d-1)==curday.d ? 'purple':'navy'} font-family="Courier New" text-anchor="middle">{d+1}</text>
     {/each}
     {#each weekmarks as w,d}
       <text x={w.x} y={w.y} font-size={d==curday.w ? 4 : 3} fill={d==curday.w ? 'blue':'grey'} font-weight={d==curday.w ? 600 : 400} font-family="Consolas" text-anchor="middle">{w.val}</text>
     {/each}
-    <polyline fill='transparent' stroke="blue" stroke-width="0.2" points="0,0 27,-2 30,3 26,5 0,0" transform={`rotate(${angw})`} />
+    <polyline fill='transparent' stroke="blue" stroke-width="0.2" points="0,0 26,-3 30,1 26,5 0,0" transform={`rotate(${angw})`} />
     <polyline stroke='red' stroke-width="0.2" fill="transparent" points="0,0 34,-4 40,0 34,5 0,0" transform={`rotate(${angd})`}/>
     <polyline fill='transparent' stroke-width="0.4" stroke='brown' points="0,0 48,-5 48,4 0,0" transform={`rotate(${angm})`} />
   </svg>
