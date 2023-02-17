@@ -1,0 +1,2 @@
+# sveltauri
+Svelte Tauri app
